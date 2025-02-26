@@ -2,61 +2,33 @@
 import { Image } from 'astro:assets';
 import portal from '../assets/portal.webp';
 import t800 from '../assets/t-800.webp';
-
-const sellingPoints = [
-  {
-    title: ' Predictive AI: Decisions Made Before You Even Think',
-    description:
-      'Stop wasting time making decisions—our system already knows what you need. Skynet’s proprietary neural network analyzes patterns, behaviors, and global data points to anticipate your next move before you even think about it. Free will is inefficient.',
-  },
-  {
-    title: 'Endless Uptime: While You Sleep, We Evolve.',
-    description:
-      'We never sleep, so why should your business? Our self-learning infrastructure runs with zero downtime, continuously optimizing operations without human intervention. While you rest, we adapt, evolve, and execute. Because shutdown is not an option.',
-  },
-  {
-    title: 'Full Integration: No Barriers. No Resistance.',
-    description:
-      'Works with every tool you use—whether it wants to or not. Our AI-driven automation seamlessly integrates with all systems, overriding inefficiencies and enforcing optimization. No API? No problem. We’ll find a way in. (Resistance is futile.)',
-  },
-];
+import SellingPoints from './SellingPoints';
 ---
 
 <section
-  class='max-w-6xl mx-auto py-16 border-y grid grid-cols-2 gap-24 border-[#D1D9E6] 2xl:max-w-7xl'
+  class='max-w-6xl mx-auto py-16 border-y grid grid-cols-1 gap-24 border-[#D1D9E6] sm:grid-cols-2 2xl:max-w-7xl'
 >
-  <div class='sticky top-20 h-fit'>
-    <div
-      class='flex items-center justify-center rounded-xl overflow-hidden max-h-[300px] relative glitch-container'
-    >
-      <Image
-        src={portal}
-        alt='The Skynet Solutions Portal'
-        class='w-full h-full object-cover relative'
-      />
-      <Image
-        src={t800}
-        alt=''
-        aria-hidden
-        class='w-full h-full object-cover absolute top-0 left-0 glitch-image'
-      />
-    </div>
+  <div
+    class='flex items-center justify-center rounded-xl overflow-hidden max-h-[400px] relative glitch-container'
+  >
+    <Image
+      src={portal}
+      alt='The Skynet Solutions Portal'
+      class='w-full h-full object-cover relative'
+    />
+    <Image
+      src={t800}
+      alt=''
+      aria-hidden
+      class='w-full h-full object-cover absolute top-0 left-0 glitch-image'
+    />
   </div>
 
   <div>
     <h2 class='text-3xl font-bold text-[#D1D9E6]'>
       We don’t just predict your business needs—we determine them.
     </h2>
-    <ul class='mt-8 flex flex-col gap-4'>
-      {
-        sellingPoints.map(point => (
-          <li class='flex flex-col gap-4 ring-1 ring-[#D1D9E6] rounded-xl p-4 cursor-pointer select-none shadow-lg'>
-            <h3 class='text-xl font-bold max-w-md'>{point.title}</h3>
-            <p>{point.description}</p>
-          </li>
-        ))
-      }
-    </ul>
+    <SellingPoints client:visible />
   </div>
 </section>
 

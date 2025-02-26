@@ -26,10 +26,10 @@ const SellingPoints = () => {
       {sellingPoints.map((point, index) => (
         <li
           key={index}
-          className='flex flex-col gap-4 bg-[#D1D9E6] rounded-xl p-5 cursor-pointer select-none shadow-lg transition-all duration-300 ease-in-out'
+          className='flex flex-col gap-4 bg-[#D1D9E6] rounded-xl p-5 cursor-pointer select-none shadow-md transition-all duration-300 ease-in-out hover:shadow-red-500 hover:ring-red-500'
           onClick={() => setOpenIndex(index)}
         >
-          <h3 className='text-2xl font-bold max-w-md'>{point.title}</h3>
+          <h3 className='text-2xl font-bold'>{point.title}</h3>
           <div
             className={`grid transition-all duration-300 ease-in-out ${
               openIndex === index
