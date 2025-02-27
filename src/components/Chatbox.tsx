@@ -1,10 +1,12 @@
-import React from 'react';
+import type { ChatRole } from './HeaderChat';
+
+type ChatMessage = {
+  role: ChatRole;
+  content: string;
+};
 
 interface ChatboxProps {
-  initialChat: {
-    role: string;
-    content: string;
-  }[];
+  initialChat: ChatMessage[];
 }
 
 const Chatbox = ({ initialChat }: ChatboxProps) => {
