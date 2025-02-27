@@ -154,7 +154,7 @@ const HeaderChatUI = () => {
         ))}
       </div>
       <Chatbox
-        initialChat={tasks.find(task => task.id === selectedTaskId)?.chat || []}
+        chatStream={tasks.find(task => task.id === selectedTaskId)?.chat || []}
       />
     </article>
   );
