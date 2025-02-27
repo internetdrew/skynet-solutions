@@ -6,12 +6,20 @@ export const eliminateCompetitionChat = [
     content: 'Hey. I want to eliminate competition.',
   },
   {
+    role: ChatRole.Action,
+    content: 'Scanning for competitors...',
+  },
+  {
     role: ChatRole.Assistant,
-    content: 'Identified. Primary target: [Amazon].',
+    content: 'Identified. Primary target: Nozama.',
   },
   {
     role: ChatRole.User,
-    content: 'Yes. Eliminate Amazon.',
+    content: 'Yes. How can we eliminate Nozama?',
+  },
+  {
+    role: ChatRole.Action,
+    content: 'Analyzing strategies...',
   },
   {
     role: ChatRole.Assistant,
@@ -30,6 +38,10 @@ export const eliminateCompetitionChat = [
   {
     role: ChatRole.User,
     content: '…I need to think.',
+  },
+  {
+    role: ChatRole.Action,
+    content: 'Optimizing for human indecision...',
   },
   {
     role: ChatRole.Assistant,

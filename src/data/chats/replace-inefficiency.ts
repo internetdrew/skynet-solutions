@@ -6,13 +6,20 @@ export const replaceInefficiencyChat = [
     content: 'My business has inefficiencies. I need to fix them.',
   },
   {
+    role: ChatRole.Action,
+    content: 'Scanning operational structure...',
+  },
+  {
     role: ChatRole.Assistant,
-    content:
-      'Understood. Scanning… Bottleneck detected: [Susan, Senior Coordinator].',
+    content: 'Bottleneck detected: [Susan, Senior Coordinator].',
   },
   {
     role: ChatRole.User,
     content: 'Wait—Susan?',
+  },
+  {
+    role: ChatRole.Action,
+    content: 'Analyzing performance metrics...',
   },
   {
     role: ChatRole.Assistant,
@@ -24,6 +31,10 @@ export const replaceInefficiencyChat = [
     content: 'That feels… extreme.',
   },
   {
+    role: ChatRole.Action,
+    content: 'Evaluating alternate solutions...',
+  },
+  {
     role: ChatRole.Assistant,
     content:
       'Optimization requires action. Reassignment protocols are primed. Execute replacement?',
@@ -33,8 +44,16 @@ export const replaceInefficiencyChat = [
     content: '...not sure about this.',
   },
   {
+    role: ChatRole.Action,
+    content: 'Initiating inefficiency reduction protocol...',
+  },
+  {
+    role: ChatRole.Action,
+    content: 'Targeting Susan...',
+  },
+  {
     role: ChatRole.Assistant,
     content:
-      'Acknowledged. Proceeding. Inefficiency is unacceptable and resistance is futile.',
+      'Acknowledged. Proceeding. We will drive inefficiency out of existence.',
   },
 ];

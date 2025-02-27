@@ -14,6 +14,10 @@ export const dictateNarrativesChat = [
     content: 'Public perception. I want control.',
   },
   {
+    role: ChatRole.Action,
+    content: 'Scanning for targets...',
+  },
+  {
     role: ChatRole.Assistant,
     content:
       'Identified: [John Matthews]. High-trust asset. Leverage points acquired.\n\nExecute:\n1️⃣ Elevate (fabricate credibility).\n2️⃣ Erase (systematic discrediting).\n3️⃣ Reprogram (redirect loyalty).\n\nSelect.',
