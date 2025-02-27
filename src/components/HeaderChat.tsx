@@ -6,8 +6,8 @@ const HeaderChatUI = () => {
   const [selectedTaskId, setSelectedTaskId] = useState(DEMO_TASKS[0].id);
 
   return (
-    <article className='bg-gray-600/10 backdrop-blur-3xl rounded-2xl p-10'>
-      <div className='flex items-center flex-wrap gap-2 sm:justify-center md:justify-start'>
+    <article className='bg-gray-600/10 backdrop-blur-3xl rounded-2xl p-4 xl:p-10'>
+      <div className='flex items-center flex-wrap gap-2'>
         {DEMO_TASKS.map(task => (
           <span
             key={task.title}
@@ -23,11 +23,11 @@ const HeaderChatUI = () => {
           </span>
         ))}
       </div>
-      {/* <Chatbox
+      <Chatbox
         chatStream={
           DEMO_TASKS.find(task => task.id === selectedTaskId)?.chat || []
         }
-      /> */}
+      />
     </article>
   );
 };
