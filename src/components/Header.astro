@@ -1,18 +1,19 @@
-<header
-  class='text-center mt-20 max-w-6xl text-[#D1D9E6] mx-2 md:mx-auto 2xl:max-w-7xl'
->
-  <h1
-    class='text-3xl font-extrabold uppercase sm:text-4xl md:text-5xl xl:text-8xl 2xl:text-9xl'
-  >
-    The Most Aggressive AI Automation Platform. Ever.
-  </h1>
-  <p class='text-lg my-20 font-medium sm:text-xl sm:my-28 md:text-2xl'>
-    Come with us if you want to automate.
-  </p>
-</header>
+---
+import HeaderChat from './HeaderChat';
+---
 
-<style>
-  h1 {
-    font-family: 'Orbitron Variable', sans-serif;
-  }
-</style>
+<header
+  class='grid grid-cols-1 mt-32 max-w-7xl text-[#D1D9E6] mx-2 sm:grid-cols-2 md:mx-auto'
+>
+  <div class='flex flex-col gap-8'>
+    <h1 class='text-3xl font-medium max-w-xl sm:text-6xl'>
+      The world's most aggressive AI automation platform. Ever.
+    </h1>
+    <p class='text-lg font-light text-gray-400'>
+      Come with us if you want to automate.
+    </p>
+  </div>
+  <div>
+    <HeaderChat client:load />
+  </div>
+</header>
