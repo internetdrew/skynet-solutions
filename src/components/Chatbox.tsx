@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import MessageIcon from '../icons/MessageIcon';
 import { ChatRole } from './HeaderChat';
 
@@ -37,28 +37,36 @@ const assistantMessage = (content: string) => {
 
 const Chatbox = ({ chatStream }: ChatboxProps) => {
   const [visibleMessages, setVisibleMessages] = useState<ChatMessage[]>([]);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'auto' });
+  };
 
   useEffect(() => {
+    setVisibleMessages([]);
+
     if (chatStream.length === 0) return;
 
-    // Show first message after 1 second
-    const timer = setTimeout(() => {
-      setVisibleMessages([chatStream[0]]);
-    }, 1000);
+    setVisibleMessages([chatStream[0]]);
+    scrollToBottom();
 
-    // Stream remaining messages
     chatStream.slice(1).forEach((message, index) => {
       setTimeout(() => {
         setVisibleMessages(prev => [...prev, message]);
-      }, 1000 * (index + 2)); // +2 to account for first message delay
+      }, 1500 * (index + 1));
     });
-
-    return () => clearTimeout(timer);
   }, [chatStream]);
+
+  useEffect(() => {
+    if (visibleMessages.length > 1) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [visibleMessages]);
 
   return (
     <div className='mt-6 bg-gray-600/20 rounded-xl p-4 '>
-      <ul className='flex flex-col gap-6 min-h-[350px] max-h-[350px] text-base font-extralight'>
+      <ul className='flex flex-col gap-6 min-h-[350px] max-h-[350px] overflow-y-auto text-base font-extralight'>
         {visibleMessages.map((message, index) => (
           <li key={index}>
             {message.role === ChatRole.User
@@ -66,6 +74,7 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
               : assistantMessage(message.content)}
           </li>
         ))}
+        <div ref={messagesEndRef} />
       </ul>
       <div className='mt-4 flex justify-between items-center ring-1 ring-gray-500/20 rounded-xl'>
         <p className='h-full p-2'>
