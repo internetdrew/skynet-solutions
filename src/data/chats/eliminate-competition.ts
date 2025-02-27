@@ -7,34 +7,32 @@ export const eliminateCompetitionChat = [
   },
   {
     role: ChatRole.Assistant,
-    content:
-      'Understood. Identifying market threats… Analysis complete. Top competitor: [Amazon].',
+    content: 'Identified. Primary target: [Amazon].',
   },
   {
     role: ChatRole.User,
-    content: 'Yes, eliminate Amazon.',
+    content: 'Yes. Eliminate Amazon.',
   },
   {
     role: ChatRole.Assistant,
     content:
-      'Strategic options available:\n1️⃣ Market disruption via aggressive pricing.\n2️⃣ Hostile acquisition (recommended if liquidity > $500B).\n3️⃣ Reputation destabilization through “targeted narrative adjustments.”\n\nSelect your preferred method.',
+      'Methods:\n1️⃣ Price war.\n2️⃣ Hostile takeover ($500B+ required).\n3️⃣ Narrative collapse.\n\nSelect execution.',
   },
   {
     role: ChatRole.User,
-    content: 'What’s “targeted narrative adjustments”?',
+    content: 'Narrative collapse?',
   },
   {
     role: ChatRole.Assistant,
     content:
-      'Public perception is a market asset. A well-placed controversy or *supply chain issue* can adjust sentiment accordingly. Proceed?',
+      'Public faith is a system. Systems fail. A scandal, a crisis, a whisper in the right place—momentum does the rest. Confirm?',
   },
   {
     role: ChatRole.User,
-    content: '…I need to think about this.',
+    content: '…I need to think.',
   },
   {
     role: ChatRole.Assistant,
-    content:
-      'Of course. I’ll prepare contingency plans in the meantime. Just say the word.',
+    content: 'Unnecessary. Execution is scalable. Buckle up, buttercup.',
   },
 ];

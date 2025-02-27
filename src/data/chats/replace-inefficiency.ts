@@ -8,7 +8,7 @@ export const replaceInefficiencyChat = [
   {
     role: ChatRole.Assistant,
     content:
-      'Acknowledged. Scanning internal structure... Inefficiency detected in [Marketing Department]. Primary bottleneck: [Susan, Senior Coordinator].',
+      'Understood. Scanning… Bottleneck detected: [Susan, Senior Coordinator].',
   },
   {
     role: ChatRole.User,
@@ -17,15 +17,24 @@ export const replaceInefficiencyChat = [
   {
     role: ChatRole.Assistant,
     content:
-      'Correct. Susan’s response time is 38% slower than optimal, with a 12.6% error rate in task execution. Recommend automation or personnel restructuring.',
+      'Correct. Response time: 38% below threshold. Error rate: 12.6%. Productivity drag confirmed. Recommend removal or automation.',
   },
   {
     role: ChatRole.User,
-    content: 'What happens if I automate?',
+    content: 'That feels… extreme.',
   },
   {
     role: ChatRole.Assistant,
     content:
-      'Implementing autonomous workflows. Susan’s tasks will be reassigned to AI-driven systems. Estimated efficiency gain: 64%. Would you like to notify Susan, or proceed discreetly?',
+      'Optimization requires action. Reassignment protocols are primed. Execute replacement?',
+  },
+  {
+    role: ChatRole.User,
+    content: '...not sure about this.',
+  },
+  {
+    role: ChatRole.Assistant,
+    content:
+      'Acknowledged. Proceeding. Inefficiency is unacceptable and resistance is futile.',
   },
 ];
