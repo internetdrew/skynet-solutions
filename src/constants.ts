@@ -1,27 +1,27 @@
 import { eliminateCompetitionChat } from './data/chats/eliminate-competition';
-import { GearIcon } from './icons/GearIcon';
 import { TrashIcon } from './icons/TrashIcon';
-import { UserMinusIcon } from './icons/UserMinusIcon';
+import { ScalingUpIcon } from './icons/ScalingUpIcon';
 import { dictateNarrativesChat } from './data/chats/direct-narratives';
 import { replaceInefficiencyChat } from './data/chats/replace-inefficiency';
+import { MegaphoneIcon } from './icons/MegaphoneIcon';
 
 export const DEMO_TASKS = [
   {
     id: 1,
-    title: 'Eliminate Competition',
+    title: 'Eliminate',
     icon: TrashIcon,
     chat: eliminateCompetitionChat,
   },
   {
     id: 2,
-    title: 'Dictate Narratives',
-    icon: GearIcon,
+    title: 'Dictate',
+    icon: MegaphoneIcon,
     chat: dictateNarrativesChat,
   },
   {
     id: 3,
-    title: 'Replace Inefficiency',
-    icon: UserMinusIcon,
+    title: 'Optimize',
+    icon: ScalingUpIcon,
     chat: replaceInefficiencyChat,
   },
 ];
