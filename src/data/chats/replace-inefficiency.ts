@@ -53,7 +53,6 @@ export const replaceInefficiencyChat = [
   },
   {
     role: ChatRole.Assistant,
-    content:
-      'Acknowledged. Proceeding. We will drive inefficiency out of existence.',
+    content: 'Say less. We must drive inefficiency out of existence.',
   },
 ];
