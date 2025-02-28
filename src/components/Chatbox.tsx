@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import MessageIcon from '../icons/MessageIcon';
 import { ChatRole, type ChatMessage } from '../types';
 import SparklesIcon from '../icons/SparklesIcon';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { isHeaderVisible } from '../stores/headerStore';
+import { useStore } from '@nanostores/react';
 
 interface ChatboxProps {
   chatStream: ChatMessage[];
@@ -12,12 +13,7 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
   const [visibleMessages, setVisibleMessages] = useState<ChatMessage[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const { targetRef: headerRef, isIntersecting: isHeaderVisible } =
-    useIntersectionObserver();
-
-  useEffect(() => {
-    headerRef.current = document.querySelector('#header');
-  }, []);
+  const $isHeaderVisible = useStore(isHeaderVisible);
 
   useEffect(() => {
     setVisibleMessages([]);
@@ -49,17 +45,17 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
   }, [chatStream]);
 
   useEffect(() => {
-    if (visibleMessages.length > 3 && isHeaderVisible) {
+    if (visibleMessages.length > 3 && $isHeaderVisible) {
       messagesEndRef.current?.scrollIntoView({
         behavior: 'smooth',
         block: 'nearest',
         inline: 'nearest',
       });
     }
-  }, [visibleMessages, isHeaderVisible]);
+  }, [visibleMessages, $isHeaderVisible]);
 
   return (
-    <div className='mt-6 bg-gray-600/20 rounded-xl p-4 '>
+    <div className='mt-6 bg-neutral-950 rounded-xl p-4 '>
       <ul
         className={`flex flex-col gap-6 min-h-[350px] max-h-[350px] select-none overflow-y-auto text-sm font-light scrollbar-hide md:text-base ${
           isLoading ? 'pointer-events-none' : ''
