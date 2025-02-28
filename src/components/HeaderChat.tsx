@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Chatbox from './Chatbox';
 import { DEMO_TASKS } from '../constants';
 
-const HeaderChatUI = () => {
+const HeaderChat = () => {
   const [selectedTaskId, setSelectedTaskId] = useState(DEMO_TASKS[0].id);
 
   return (
@@ -32,4 +32,4 @@ const HeaderChatUI = () => {
   );
 };
 
-export default HeaderChatUI;
+export default HeaderChat;
