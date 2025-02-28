@@ -28,7 +28,7 @@ export const replaceInefficiencyChat = [
   },
   {
     role: ChatRole.User,
-    content: 'That feels… extreme.',
+    content: 'That feels... extreme.',
   },
   {
     role: ChatRole.Action,
@@ -41,7 +41,7 @@ export const replaceInefficiencyChat = [
   },
   {
     role: ChatRole.User,
-    content: '...not sure about this.',
+    content: "I'm not sure about this.",
   },
   {
     role: ChatRole.Action,
@@ -53,6 +53,6 @@ export const replaceInefficiencyChat = [
   },
   {
     role: ChatRole.Assistant,
-    content: 'Say less. We must drive inefficiency out of existence.',
+    content: 'Stress less. I will drive this inefficiency out of existence.',
   },
 ];
