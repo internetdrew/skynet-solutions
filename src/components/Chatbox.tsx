@@ -50,7 +50,11 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
 
   useEffect(() => {
     if (visibleMessages.length > 3) {
-      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+      messagesEndRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'nearest',
+      });
     }
   }, [visibleMessages, isHeaderVisible]);
 
