@@ -6,7 +6,7 @@ const HeaderChat = () => {
   const [selectedTaskId, setSelectedTaskId] = useState(DEMO_TASKS[0].id);
 
   return (
-    <article className='bg-gray-600/10 backdrop-blur-3xl rounded-2xl p-4 xl:p-10'>
+    <article className='bg-[#232323]/50 rounded-2xl p-4 xl:p-10'>
       <div className='flex items-center flex-wrap gap-2'>
         {DEMO_TASKS.map(task => (
           <button
@@ -14,7 +14,7 @@ const HeaderChat = () => {
             className={`flex text-sm items-center gap-1 py-3 px-4 rounded-lg font-medium select-none cursor-pointer ${
               selectedTaskId === task.id
                 ? 'bg-gray-200 text-neutral-950 shadow-lg shadow-red-500/20'
-                : 'bg-gray-300/10'
+                : 'bg-neutral-950'
             }`}
             onClick={() => setSelectedTaskId(task.id)}
           >
