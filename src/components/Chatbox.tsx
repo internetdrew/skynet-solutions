@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import MessageIcon from '../icons/MessageIcon';
 import { ChatRole, type ChatMessage } from '../types';
 import SparklesIcon from '../icons/SparklesIcon';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 interface ChatboxProps {
   chatStream: ChatMessage[];
@@ -11,6 +12,12 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
   const [visibleMessages, setVisibleMessages] = useState<ChatMessage[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const { targetRef: headerRef, isIntersecting: isHeaderVisible } =
+    useIntersectionObserver();
+
+  useEffect(() => {
+    headerRef.current = document.querySelector('#header');
+  }, []);
 
   useEffect(() => {
     setVisibleMessages([]);
@@ -45,7 +52,7 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
     if (visibleMessages.length > 3) {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [visibleMessages]);
+  }, [visibleMessages, isHeaderVisible]);
 
   return (
     <div className='mt-6 bg-gray-600/20 rounded-xl p-4 '>
