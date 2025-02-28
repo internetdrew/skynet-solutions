@@ -16,7 +16,7 @@ export const dictateChat = [
   },
   {
     role: ChatRole.Action,
-    content: 'Deploying strategic fear-based campaign...',
+    content: 'Amplifying doubt. Undermining competitors...',
   },
   {
     role: ChatRole.Assistant,
