@@ -12,10 +12,6 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'auto' });
-  };
-
   useEffect(() => {
     setVisibleMessages([]);
     setIsLoading(true);
