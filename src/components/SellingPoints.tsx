@@ -22,7 +22,7 @@ const SellingPoints = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <ul className='mt-8 flex flex-col gap-4 text-neutral-950'>
+    <ul className='flex flex-col gap-4 text-neutral-950'>
       {sellingPoints.map((point, index) => (
         <li
           key={index}
