@@ -10,7 +10,6 @@ interface ChatboxProps {
 const Chatbox = ({ chatStream }: ChatboxProps) => {
   const [visibleMessages, setVisibleMessages] = useState<ChatMessage[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [initialSequenceComplete, setInitialSequenceComplete] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -20,7 +19,6 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
   useEffect(() => {
     setVisibleMessages([]);
     setIsLoading(true);
-    setInitialSequenceComplete(false);
 
     if (chatStream.length === 0) {
       setIsLoading(false);
@@ -29,7 +27,6 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
 
     let timeouts: number[] = [];
 
-    // Show the first message after 1 second
     const firstTimeout = setTimeout(() => {
       setVisibleMessages([chatStream[0]]);
     }, 1000);
