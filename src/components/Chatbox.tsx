@@ -49,7 +49,7 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
   }, [chatStream]);
 
   useEffect(() => {
-    if (visibleMessages.length > 3) {
+    if (visibleMessages.length > 3 && isHeaderVisible) {
       messagesEndRef.current?.scrollIntoView({
         behavior: 'smooth',
         block: 'nearest',
