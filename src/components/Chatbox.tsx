@@ -10,6 +10,7 @@ interface ChatboxProps {
 const Chatbox = ({ chatStream }: ChatboxProps) => {
   const [visibleMessages, setVisibleMessages] = useState<ChatMessage[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [initialSequenceComplete, setInitialSequenceComplete] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -19,6 +20,7 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
   useEffect(() => {
     setVisibleMessages([]);
     setIsLoading(true);
+    setInitialSequenceComplete(false);
 
     if (chatStream.length === 0) {
       setIsLoading(false);
@@ -27,11 +29,10 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
 
     let timeouts: number[] = [];
 
+    // Show the first message after 1 second
     const firstTimeout = setTimeout(() => {
       setVisibleMessages([chatStream[0]]);
-      scrollToBottom();
     }, 1000);
-
     timeouts.push(firstTimeout);
 
     chatStream.slice(1).forEach((message, index) => {
@@ -48,7 +49,7 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
   }, [chatStream]);
 
   useEffect(() => {
-    if (visibleMessages.length > 1) {
+    if (visibleMessages.length > 3) {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
   }, [visibleMessages]);
@@ -105,7 +106,7 @@ const ActionMessage = ({ content }: { content: string }) => {
   return (
     <div className='flex items-center gap-2 text-sm text-gray-400 italic mr-auto'>
       <div className='animate-pulse'>
-        <SparklesIcon className='text-gray-400' />
+        <SparklesIcon className='text-red-500' />
       </div>
       {formatMessageContent(content)}
     </div>
