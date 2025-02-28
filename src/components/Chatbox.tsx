@@ -83,7 +83,7 @@ const formatMessageContent = (content: string) => {
 
 const UserMessage = ({ content }: { content: string }) => {
   return (
-    <div className='bg-gray-500/20 rounded-xl p-4 ml-auto max-w-xs rounded-br-sm sm:w-max'>
+    <div className='bg-gray-500/20 rounded-xl p-4 ml-auto max-w-[75%] rounded-br-sm w-fit'>
       {formatMessageContent(content)}
     </div>
   );
@@ -91,9 +91,9 @@ const UserMessage = ({ content }: { content: string }) => {
 
 const AssistantMessage = ({ content }: { content: string }) => {
   return (
-    <div className='bg-[#D1D9E6] rounded-xl p-4 mr-auto max-w-xs rounded-br-sm text-neutral-950'>
+    <div className='bg-[#D1D9E6] rounded-xl p-4 max-w-[75%] rounded-br-sm text-neutral-950 w-fit'>
       {formatMessageContent(content)}
-      <div className='flex items-center gap-1 mt-2'>
+      <div className='inline-flex items-center gap-1 mt-2'>
         <MessageIcon className='text-gray-500' />
         <span className='text-xs text-gray-500'>AI Agent</span>
       </div>
