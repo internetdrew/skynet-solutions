@@ -1,8 +1,8 @@
-import { dominationChat } from './data/chats/domination';
+import { dominationChat } from './data/chats/dominate';
 import { TrophyIcon } from './icons/TrophyIcon';
 import { ScalingUpIcon } from './icons/ScalingUpIcon';
-import { dictateNarrativesChat } from './data/chats/direct-narratives';
-import { replaceInefficiencyChat } from './data/chats/replace-inefficiency';
+import { dictateChat } from './data/chats/dictate';
+import { optimizeChat } from './data/chats/optimize';
 import { MegaphoneIcon } from './icons/MegaphoneIcon';
 
 export const DEMO_TASKS = [
@@ -16,12 +16,12 @@ export const DEMO_TASKS = [
     id: 2,
     title: 'Dictate',
     icon: MegaphoneIcon,
-    chat: dictateNarrativesChat,
+    chat: dictateChat,
   },
   {
     id: 3,
     title: 'Optimize',
     icon: ScalingUpIcon,
-    chat: replaceInefficiencyChat,
+    chat: optimizeChat,
   },
 ];
