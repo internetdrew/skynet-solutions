@@ -3,17 +3,19 @@ import HeaderChat from './HeaderChat';
 ---
 
 <header
-  class='grid grid-cols-1 mt-32 max-w-7xl text-[#D1D9E6] mx-2 sm:grid-cols-2 md:mx-auto'
+  class='grid grid-cols-1 mt-24 gap-6 max-w-7xl text-[#D1D9E6] mx-4 md:mt-32 md:grid-cols-2 xl:mx-auto'
 >
-  <div class='flex flex-col gap-8'>
-    <h1 class='text-3xl font-medium max-w-xl sm:text-6xl'>
+  <div class='flex flex-col gap-6 text-center md:text-left'>
+    <h1
+      class='text-3xl max-w-md mx-auto font-medium md:mx-0 lg:text-4xl lg:max-w-xl xl:text-5xl'
+    >
       The world's most aggressive AI automation platform. Ever.
     </h1>
-    <p class='text-lg font-light text-gray-400'>
+    <p class='font-light text-gray-400 md:text-lg xl:text-xl'>
       Come with us if you want to automate.
     </p>
   </div>
-  <div>
+  <div class='mt-6 md:mt-0'>
     <HeaderChat client:load />
   </div>
 </header>
