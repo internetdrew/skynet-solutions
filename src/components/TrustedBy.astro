@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import SwissLogo from '../assets/logos/swiss.svg';
+import SpringfieldLogo from '../assets/logos/springfield.svg';
+import GrindelwaldLogo from '../assets/logos/grindelwald.svg';
+import UmbrellaLogo from '../assets/logos/umbrella.svg';
+import HudsonLogo from '../assets/logos/hudson.svg';
+
+const companies = [
+  { logo: SwissLogo, alt: 'Swiss Logo' },
+  { logo: SpringfieldLogo, alt: 'Springfield Logo' },
+  { logo: GrindelwaldLogo, alt: 'Grindelwald Logo' },
+  { logo: UmbrellaLogo, alt: 'Umbrella Logo' },
+  { logo: HudsonLogo, alt: 'Hudson Logo' },
+];
+---
+
+<section class='py-16 px-4 bg-[#D1D9E6] text-neutral-950 lg:px-0'>
+  <h2 class='text-2xl text-center font-light md:text-3xl'>
+    Trusted by <span class='text-red-600'>success-obsessed innovators</span>
+  </h2>
+  <ul
+    class='flex flex-wrap justify-center items-center gap-8 gap-y-0 max-w-5xl mx-auto md:gap-12'
+  >
+    {
+      companies.map(company => (
+        <li>
+          <Image
+            src={company.logo}
+            alt={company.alt}
+            class='h-24 w-24 lg:h-36 lg:w-36 xl:h-40 xl:w-40'
+          />
+        </li>
+      ))
+    }
+  </ul>
+</section>
