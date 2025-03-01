@@ -1,8 +1,9 @@
 ---
-import SellingPoints from './SellingPoints';
+import CoreFeaturesDemo from './CoreFeaturesDemo';
 ---
 
 <section
+  id='features'
   class='flex flex-col gap-4 max-w-7xl mx-4 py-16 md:mx-auto text-[#D1D9E6]'
 >
   <div class='flex flex-col gap-4 items-center justify-center'>
@@ -20,8 +21,22 @@ import SellingPoints from './SellingPoints';
       ensures your position as the last one standing.
     </p>
   </div>
-  <div class='grid grid-cols-1 md:grid-cols-2 gap-4 mt-16'>
-    <SellingPoints client:visible />
-    <div>Terminal Display Here</div>
-  </div>
+  <CoreFeaturesDemo client:visible />
 </section>
+
+<script>
+  import { isFeaturesVisible } from '../stores/featuresStore';
+
+  const features = document.querySelector('#features');
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      isFeaturesVisible.set(entry.isIntersecting);
+    },
+    { threshold: 0 }
+  );
+
+  if (features) {
+    observer.observe(features);
+  }
+</script>
