@@ -9,7 +9,6 @@ interface TerminalWindowProps {
 
 const TerminalWindow = ({ messages }: TerminalWindowProps) => {
   const [visibleMessages, setVisibleMessages] = useState<string[]>([]);
-
   const containerRef = useRef<HTMLDivElement>(null);
   const $isFeaturesVisible = useStore(isFeaturesVisible);
 
