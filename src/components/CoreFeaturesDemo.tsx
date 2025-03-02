@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SellingPoints from './SellingPoints';
+import FeaturesList from './FeaturesList';
 import TerminalWindow from './TerminalWindow';
 import { FEATURES } from '../constants';
 
@@ -8,11 +8,11 @@ const CoreFeaturesDemo = () => {
   const terminalMessages = FEATURES[openIndex].terminalMessages;
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-12 gap-4 mt-16 md:gap-16'>
-      <div className='md:col-span-4'>
-        <SellingPoints openIndex={openIndex} setOpenIndex={setOpenIndex} />
+    <div className='flex flex-col gap-8 my-16 md:flex-row'>
+      <div className='md:max-w-[30%]'>
+        <FeaturesList openIndex={openIndex} setOpenIndex={setOpenIndex} />
       </div>
-      <div className='flex items-center justify-center rounded-xl bg-[#232323]/50 h-[75%] p-4 md:col-span-8'>
+      <div className='w-full rounded-xl bg-[#232323]/50 max-w-3xl mx-auto md:p-16'>
         <TerminalWindow messages={terminalMessages} />
       </div>
     </div>
