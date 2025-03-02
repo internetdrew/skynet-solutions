@@ -12,7 +12,7 @@ const CoreFeaturesDemo = () => {
       <div className='md:max-w-[30%]'>
         <FeaturesList openIndex={openIndex} setOpenIndex={setOpenIndex} />
       </div>
-      <div className='w-full rounded-xl bg-[#232323]/50 max-w-3xl mx-auto md:p-16'>
+      <div className='w-full p-1 rounded-xl bg-[#232323]/50 max-w-3xl mx-auto h-fit md:p-16'>
         <TerminalWindow messages={terminalMessages} />
       </div>
     </div>
