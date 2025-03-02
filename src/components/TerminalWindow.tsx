@@ -36,7 +36,10 @@ const TerminalWindow = ({ messages }: TerminalWindowProps) => {
   useEffect(() => {
     if ($isFeaturesVisible && containerRef.current) {
       const container = containerRef.current;
-      container.scrollTop = container.scrollHeight;
+      container.scrollTo({
+        top: container.scrollHeight,
+        behavior: 'smooth',
+      });
     }
   }, [visibleMessages, $isFeaturesVisible]);
 

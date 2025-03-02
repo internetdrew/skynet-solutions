@@ -12,7 +12,7 @@ interface ChatboxProps {
 const Chatbox = ({ chatStream }: ChatboxProps) => {
   const [visibleMessages, setVisibleMessages] = useState<ChatMessage[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLUListElement>(null);
   const $isHeaderVisible = useStore(isHeaderVisible);
 
   useEffect(() => {
@@ -45,18 +45,23 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
   }, [chatStream]);
 
   useEffect(() => {
-    if (visibleMessages.length > 3 && $isHeaderVisible) {
-      messagesEndRef.current?.scrollIntoView({
+    if (
+      visibleMessages.length > 3 &&
+      $isHeaderVisible &&
+      containerRef.current
+    ) {
+      const container = containerRef.current;
+      container.scrollTo({
+        top: container.scrollHeight,
         behavior: 'smooth',
-        block: 'nearest',
-        inline: 'nearest',
       });
     }
   }, [visibleMessages, $isHeaderVisible]);
 
   return (
-    <div className='mt-6 bg-neutral-950 rounded-xl p-4 '>
+    <div className='mt-6 bg-neutral-950 rounded-xl p-4'>
       <ul
+        ref={containerRef}
         className={`flex flex-col gap-6 min-h-[350px] max-h-[350px] select-none overflow-y-auto text-sm font-light scrollbar-hide md:text-base ${
           isLoading ? 'pointer-events-none' : ''
         }`}
@@ -72,7 +77,6 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
             )}
           </li>
         ))}
-        <div ref={messagesEndRef} />
       </ul>
     </div>
   );
