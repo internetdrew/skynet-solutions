@@ -1,0 +1,42 @@
+---
+import CoreFeaturesDemo from './CoreFeaturesDemo';
+---
+
+<section
+  id='features'
+  class='flex flex-col gap-4 max-w-7xl mx-4 py-16 md:mx-auto text-[#D1D9E6]'
+>
+  <div class='flex flex-col gap-4 items-center justify-center'>
+    <span
+      class='text-sm text-neutral-950 font-medium bg-red-600 px-2 py-1 rounded-full'
+      >Core features</span
+    >
+    <h2 class='text-3xl text-center max-w-xl md:text-5xl'>
+      Introducing the T-800 — an AI-powered platform for relentless market
+      domination
+    </h2>
+    <p class='text-[#7d828a] text-center max-w-xl md:text-lg'>
+      90% of business success isn’t just about strategies—it’s about execution.
+      The T-800 doesn’t ask for permission. It calculates, dominates, and
+      ensures your position as the last one standing.
+    </p>
+  </div>
+  <CoreFeaturesDemo client:visible />
+</section>
+
+<script>
+  import { isFeaturesVisible } from '../stores/featuresStore';
+
+  const features = document.querySelector('#features');
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      isFeaturesVisible.set(entry.isIntersecting);
+    },
+    { threshold: 0 }
+  );
+
+  if (features) {
+    observer.observe(features);
+  }
+</script>

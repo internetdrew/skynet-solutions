@@ -16,7 +16,7 @@ export const dictateChat = [
   },
   {
     role: ChatRole.Action,
-    content: 'Amplifying doubt. Undermining competitors...',
+    content: 'Amplifying competitor disinformation campaigns...',
   },
   {
     role: ChatRole.Assistant,

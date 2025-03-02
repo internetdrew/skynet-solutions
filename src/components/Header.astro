@@ -20,3 +20,20 @@ import HeaderChat from './HeaderChat';
     <HeaderChat client:load />
   </div>
 </header>
+
+<script>
+  import { isHeaderVisible } from '../stores/headerStore';
+
+  const header = document.querySelector('#header');
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      isHeaderVisible.set(entry.isIntersecting);
+    },
+    { threshold: 0 }
+  );
+
+  if (header) {
+    observer.observe(header);
+  }
+</script>
