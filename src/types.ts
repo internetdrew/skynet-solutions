@@ -17,3 +17,10 @@ export interface Task {
   icon: ReactNode;
   chat: ChatMessage[];
 }
+
+export interface Testimonial {
+  name: string;
+  position: string;
+  imageSrc: ImageMetadata;
+  quote: string;
+}
