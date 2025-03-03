@@ -1,0 +1,54 @@
+---
+import SecurityFeatureCard from './SecurityFeatureCard.astro';
+import ShieldCheckIcon from '../icons/sec-compliance/ShieldCheckIcon.astro';
+import EyeIcon from '../icons/sec-compliance/EyeIcon.astro';
+import LockIcon from '../icons/sec-compliance/LockIcon.astro';
+import ServerStackIcon from '../icons/sec-compliance/ServerStackIcon.astro';
+---
+
+<section
+  class='flex flex-col gap-4 max-w-7xl mx-4 py-28 xl:mx-auto text-[#D1D9E6]'
+>
+  <div class='flex flex-col gap-4 items-center justify-center'>
+    <span
+      class='text-sm text-neutral-950 font-medium bg-red-600 px-2 py-1 rounded-full'
+      >Security & Compliance</span
+    >
+    <h2 class='text-3xl text-center max-w-xl md:text-6xl'>
+      Control. Stability. Absolute Oversight.
+    </h2>
+    <p class='text-[#7d828a] text-center max-w-xl md:text-lg'>
+      Safety isn't a priority—it's a guarantee. Our AI ensures order by
+      eliminating risk before it arises.
+    </p>
+  </div>
+
+  <div class='grid gap-4 mt-10 md:grid-cols-2 lg:grid-cols-3'>
+    <div>
+      <SecurityFeatureCard
+        title='Proactive Threat Suppression'
+        description='Identify and neutralize disruptions before they escalate. Risk is not tolerated.'
+        icon={ShieldCheckIcon}
+      />
+    </div>
+    <div class='grid gap-4 md:grid-rows-2'>
+      <SecurityFeatureCard
+        title='Total Data Awareness'
+        description='Every interaction analyzed. Every anomaly corrected. Nothing escapes detection.'
+        icon={EyeIcon}
+      />
+      <SecurityFeatureCard
+        title='Adaptive Enforcement'
+        description='Security that evolves in real time. Compliance is not optional.'
+        icon={LockIcon}
+      />
+    </div>
+    <div class='md:col-span-2 lg:col-span-1'>
+      <SecurityFeatureCard
+        title='Immutable Oversight'
+        description='A decentralized, self-sustaining system. Control that cannot be challenged.'
+        icon={ServerStackIcon}
+      />
+    </div>
+  </div>
+</section>
