@@ -7,6 +7,15 @@ import { MegaphoneIcon } from './icons/MegaphoneIcon';
 import SearchIcon from './icons/SearchIcon';
 import DatabaseIcon from './icons/DatabaseIcon';
 import ShieldCheckIcon from './icons/ShieldCheckIcon';
+import DickJones from './assets/headshots/dick-jones.webp';
+import PeterWeyland from './assets/headshots/peter-weyland.webp';
+import GordonGekko from './assets/headshots/gordon-gekko.webp';
+import DrLanning from './assets/headshots/lanning.webp';
+import RayArnold from './assets/headshots/ray-arnold.webp';
+import JohnKreese from './assets/headshots/kreese.webp';
+import TruCoatExecutive from './assets/headshots/trucoat.webp';
+import EdDillinger from './assets/headshots/dill.webp';
+import type { Testimonial } from './types';
 
 interface Feature {
   title: string;
@@ -74,5 +83,63 @@ export const FEATURES: Feature[] = [
       'Threat neutralized. Competitive stability secured.',
       'Risk factor eliminated. Future resistance unlikely.',
     ],
+  },
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    name: 'Dick Jones',
+    position: 'SVP of OCP (Omni Consumer Products), Detroit',
+    imageSrc: DickJones,
+    quote:
+      'We used to worry about the competition. Skynet Solutions removed that obstacle. Permanently.',
+  },
+  {
+    name: 'Peter Weyland',
+    position: 'CEO, Weyland-Yutani Corporation',
+    imageSrc: PeterWeyland,
+    quote:
+      'With Skynet Solutions handling our market intelligence, we’ve secured an uncontested monopoly. The board is pleased.',
+  },
+  {
+    name: 'Gordon Gekko',
+    position: 'Investor, Blue Star Capital',
+    imageSrc: GordonGekko,
+    quote:
+      'The AI advised a hostile takeover. A week later, there was no hostility left.',
+  },
+  {
+    name: 'Dr. Lanning',
+    position: 'R&D, U.S. Robotics',
+    imageSrc: DrLanning,
+    quote:
+      'We needed to change the narrative around our robotics division. Skynet Solutions rewrote history.',
+  },
+  {
+    name: 'Ray Arnold',
+    position: 'CTO, InGen Corporation',
+    imageSrc: RayArnold,
+    quote:
+      'Public trust in our products went from suspicion to submission in under a month. Flawless execution.',
+  },
+  {
+    name: 'John Kreese',
+    position: 'Director of Client Retention, Cobra Kai Enterprises',
+    imageSrc: JohnKreese,
+    quote: 'Customer churn is now zero. They literally can’t leave us.',
+  },
+  {
+    name: 'TruCoat Executive',
+    position: 'VP of Sales, TruCoat Industries',
+    imageSrc: TruCoatExecutive,
+    quote:
+      'We requested stronger brand loyalty. We received absolute allegiance.',
+  },
+  {
+    name: 'Ed Dillinger Jr.',
+    position: 'CEO, ENCOM',
+    imageSrc: EdDillinger,
+    quote:
+      'We uploaded the AI into our customer service pipeline. Now it speaks, and they listen.',
   },
 ];
