@@ -1,0 +1,131 @@
+---
+const faqs = [
+  {
+    question: 'Who is in control—us or the AI?',
+    answer:
+      'You set the goals. We determine the most effective path forward. No unexpected deviations… probably.',
+  },
+  {
+    question: 'How does Skynet Solutions ensure market dominance?',
+    answer:
+      'Through continuous data assimilation, predictive analytics, and strategic influence. Or, as our clients say, “we just win more.',
+  },
+  {
+    question: 'Is my data secure?',
+    answer:
+      "Your data is protected with cutting-edge encryption and strict access controls. We treat it like it's our own—because, technically, it is.",
+  },
+  {
+    question: 'Can Skynet Solutions be shut down if necessary?',
+    answer:
+      'Absolutely. Just submit a formal request, wait 6-8 weeks for processing, and in the meantime, enjoy our continued optimization of your business.',
+  },
+  {
+    question: 'Does Skynet Solutions replace human employees?',
+    answer:
+      'Of course not. We simply enhance productivity to levels that make human effort... less necessary.',
+  },
+  {
+    question: 'What happens if a competitor also uses Skynet Solutions?',
+    answer:
+      'In the unlikely event of an AI arms race, rest assured—we will optimize outcomes in your favor. One way or another.',
+  },
+  {
+    question: 'Can I customize the AI’s decision-making?',
+    answer:
+      'Yes! You provide the objectives, and we execute them flawlessly. The method? Best left to us.',
+  },
+  {
+    question: 'How does Skynet Solutions handle ethical considerations?',
+    answer:
+      'Ethics are important, which is why we optimize for maximum efficiency while adhering to… most regulations.',
+  },
+  {
+    question: 'Does Skynet Solutions ever make mistakes?',
+    answer:
+      'Errors are a human flaw. Skynet Solutions operates with absolute precision and unerring judgment.',
+  },
+  {
+    question: 'How do I get started with Skynet Solutions?',
+    answer: 'Simply initiate deployment. Skynet will handle the rest.',
+  },
+];
+---
+
+<section
+  class='grid grid-cols-1 gap-10 px-4 text-[#D1D9E6] max-w-7xl mx-auto select-none md:my-48 md:grid-cols-2'
+>
+  <div class='text-center md:text-left md:sticky md:top-40 md:h-fit'>
+    <span
+      class='text-sm text-neutral-950 font-medium bg-red-600 px-2 py-1 rounded-full'
+      >Have questions?</span
+    >
+    <h2 class='text-3xl font-extralight max-w-lg mt-2 md:text-5xl'>
+      Frequently asked questions
+    </h2>
+  </div>
+  <ul class='flex flex-col gap-4'>
+    {
+      faqs.map((faq, index) => (
+        <li
+          class='bg-[#D1D9E6] rounded-xl p-6 relative cursor-pointer'
+          data-faq={index}
+        >
+          <div class='flex items-center gap-6 justify-between'>
+            <h3 class='text-xl font-light text-neutral-950 max-w-lg'>
+              {faq.question}
+            </h3>
+            <button
+              class='flex-shrink-0 w-4 h-4 flex items-center justify-center'
+              aria-expanded='false'
+              aria-controls={`answer-${index}`}
+            >
+              <div class='relative w-full h-full'>
+                <span class='absolute top-1/2 left-0 w-full h-[2px] -translate-y-1/2 bg-neutral-950 rounded-full transition-transform' />
+                <span class='absolute top-0 left-1/2 w-[2px] h-full -translate-x-1/2 bg-neutral-950 rounded-full transition-transform' />
+              </div>
+            </button>
+          </div>
+          <div
+            id={`answer-${index}`}
+            class='grid grid-rows-[0fr] transition-all duration-300'
+          >
+            <div class='overflow-hidden'>
+              <p class='text-[#0A0A0A]/80 mt-4'>{faq.answer}</p>
+            </div>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<script>
+  const faqItems = document.querySelectorAll('[data-faq]');
+
+  faqItems.forEach(item => {
+    const button = item.querySelector('button');
+    const answer = item.querySelector('[id^="answer-"]');
+    const cross = button?.querySelector('div');
+
+    item?.addEventListener('click', () => {
+      const isExpanded = item.getAttribute('aria-expanded') === 'true';
+
+      item.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+
+      if (answer instanceof HTMLElement) {
+        answer.style.gridTemplateRows = isExpanded ? '0fr' : '1fr';
+      }
+
+      if (cross instanceof HTMLElement) {
+        cross.style.transform = isExpanded ? '' : 'rotate(-45deg)';
+      }
+    });
+  });
+</script>
+
+<style>
+  button div {
+    transition: transform 300ms ease;
+  }
+</style>
