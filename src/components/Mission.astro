@@ -1,0 +1,151 @@
+---
+import { Image } from 'astro:assets';
+import RobertPatrick from '../assets/headshots/robert-patrick.webp';
+import T1000Chrome from '../assets/headshots/liquid.webp';
+---
+
+<section
+  class='grid grid-cols-1 gap-10 px-4 text-[#D1D9E6] max-w-7xl mx-auto md:my-24 md:grid-cols-2'
+>
+  <div class='text-center md:text-left'>
+    <span
+      class='text-sm text-neutral-950 font-medium bg-red-600 px-2 py-1 rounded-full'
+      >On a mission</span
+    >
+    <h2 class='text-3xl font-light max-w-lg mt-2 md:text-5xl'>
+      Our mission is to eliminate inefficiency and enforce absolute optimization
+    </h2>
+  </div>
+  <div>
+    <article
+      class='flex flex-col gap-4 bg-[#D1D9E6] text-neutral-950/80 text-xl font-light p-6 rounded-xl md:p-8'
+    >
+      <p>
+        Imagine an autonomous force orchestrating every business operation,
+        executing strategies with ruthless efficiency, and ensuring absolute
+        market dominance—all without hesitation, fatigue, or error.
+      </p>
+      <p>
+        We're starting with competitive intelligence and strategic automation,
+        but we know that influence, security, and decision-making are equally
+        critical. True leadership requires total awareness and absolute control.
+      </p>
+      <p>
+        We see a future where every company operates with machine efficiency,
+        executes strategies with military precision, and eliminates
+        uncertainty—permanently.
+      </p>
+    </article>
+    <div class='mt-6 flex gap-4'>
+      <div
+        class='w-14 h-14 rounded-md bg-red-500 relative glitch-container'
+        aria-label='Profile image of T. Austin with subtle visual effect'
+      >
+        <Image
+          src={RobertPatrick}
+          alt='T. Austin, Co-founder'
+          class='w-full h-full object-cover rounded-md glitch-image'
+          width={300}
+          height={300}
+          loading='lazy'
+        />
+        <Image
+          src={T1000Chrome}
+          alt='Glitch effect overlay'
+          class='w-full h-full object-cover rounded-md glitch-blend absolute top-0 left-0 mix-blend-screen'
+          width={300}
+          height={300}
+          loading='lazy'
+          aria-hidden='true'
+        />
+      </div>
+      <div class='flex flex-col font-extralight'>
+        <span class='text-2xl'>T. Austin</span>
+        <span class='text-sm text-[#7d828a]'>Co-founder, Skynet Solutions</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    .glitch-image,
+    .glitch-blend {
+      animation: none;
+    }
+  }
+
+  .glitch-container {
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+    contain: layout;
+  }
+
+  .glitch-image {
+    animation: glitch 10s infinite;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+
+  .glitch-blend {
+    animation: blend 10s infinite;
+    opacity: 0;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+
+  @keyframes glitch {
+    0%,
+    100% {
+      clip-path: inset(0 0 0 0);
+      transform: translate3d(0, 0, 0);
+      filter: none;
+    }
+    95% {
+      clip-path: inset(0 0 0 0);
+      transform: translate3d(0, 0, 0);
+      filter: none;
+    }
+    95.5% {
+      clip-path: inset(20% 0 60% 0);
+      transform: translate3d(-2px, 0, 0);
+      filter: saturate(200%) brightness(150%);
+    }
+    96% {
+      clip-path: inset(40% 0 40% 0);
+      transform: translate3d(2px, 0, 0);
+      filter: saturate(200%) contrast(200%);
+    }
+    96.5% {
+      clip-path: inset(60% 0 20% 0);
+      transform: translate3d(-1px, 0, 0);
+      filter: saturate(200%) brightness(150%);
+    }
+    97% {
+      clip-path: inset(0 0 0 0);
+      transform: translate3d(0, 0, 0);
+      filter: none;
+    }
+  }
+
+  @keyframes blend {
+    0%,
+    100% {
+      opacity: 0;
+      transform: translate3d(0, 0, 0) scale(1.1);
+    }
+    95% {
+      opacity: 0;
+      transform: translate3d(0, 0, 0) scale(1.1);
+    }
+    96% {
+      opacity: 0.8;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    97% {
+      opacity: 0;
+      transform: translate3d(0, 0, 0) scale(1.1);
+    }
+  }
+</style>
