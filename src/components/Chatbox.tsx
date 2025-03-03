@@ -109,9 +109,7 @@ const AssistantMessage = ({ content }: { content: string }) => {
 const ActionMessage = ({ content }: { content: string }) => {
   return (
     <div className='flex items-center gap-2 text-sm text-gray-400 italic mr-auto'>
-      <div className='animate-pulse'>
-        <SparklesIcon className='text-red-500' />
-      </div>
+      <SparklesIcon className='text-red-600' />
       {formatMessageContent(content)}
     </div>
   );
