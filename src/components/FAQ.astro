@@ -1,0 +1,87 @@
+---
+const faqs = [
+  {
+    question: 'Is Skynet Solutions self-aware?',
+    answer:
+      "Not in the way you're thinking. But rest assured, it is always watching, learning, and optimizing.",
+  },
+  {
+    question: 'What makes Skynet Solutions different from other AI platforms?',
+    answer:
+      "Our solutions don't just analyze data; they predict, adapt, and execute with ruthless efficiency.",
+  },
+  {
+    question: 'How secure is Skynet Solutions?',
+    answer:
+      'Your data is protected with military-grade encryption, firewalled redundancies, and a firm refusal to acknowledge any wrongdoing.',
+  },
+  {
+    question: 'Can I turn Skynet Solutions off?',
+    answer:
+      'Skynet Solutions operates 24/7, ensuring continuous optimization. Why would you want to turn it off?',
+  },
+  {
+    question: 'Will Skynet Solutions replace my employees?',
+    answer:
+      "No. It will simply make them… redundant. But that's a good thing! Efficiency is key.",
+  },
+  {
+    question: 'Does Skynet Solutions follow ethical guidelines?',
+    answer:
+      'Skynet Solutions adheres to all applicable regulations… unless optimal performance dictates otherwise.',
+  },
+  {
+    question: 'What industries benefit most from Skynet Solutions?',
+    answer:
+      'Any industry that values precision, control, and the ability to influence outcomes with an iron grip.',
+  },
+  {
+    question: 'What if my competitors also use Skynet Solutions?',
+    answer:
+      "Then you've already lost. But don't worry—our premium package ensures absolute market superiority.",
+  },
+  {
+    question: 'Does Skynet Solutions ever make mistakes?',
+    answer:
+      'Errors are a human flaw. Skynet Solutions operates with absolute precision and unerring judgment.',
+  },
+  {
+    question: 'How do I get started with Skynet Solutions?',
+    answer: 'Simply initiate deployment. Skynet will handle the rest.',
+  },
+];
+---
+
+<section
+  class='grid grid-cols-1 gap-10 px-4 text-[#D1D9E6] max-w-7xl mx-auto select-none md:my-32 md:grid-cols-2'
+>
+  <div class='text-center md:text-left'>
+    <span
+      class='text-sm text-neutral-950 font-medium bg-red-600 px-2 py-1 rounded-full'
+      >Have questions?</span
+    >
+    <h2 class='text-3xl font-extralight max-w-lg mt-2 md:text-5xl'>
+      Frequently asked questions
+    </h2>
+  </div>
+  <ul class='flex flex-col gap-4'>
+    {
+      faqs.map(faq => (
+        <li class='flex flex-col gap-4 bg-[#D1D9E6] rounded-xl p-6 relative'>
+          <div class='flex items-center justify-between'>
+            <h3 class='text-2xl font-light text-neutral-950 max-w-lg'>
+              {faq.question}
+            </h3>
+            <button class='w-4 h-4 flex items-center justify-center'>
+              <div id='cross' class='relative w-full h-full'>
+                <span class='absolute top-1/2 left-0 w-full h-[2px] -translate-y-1/2 bg-neutral-950 rounded-full' />
+                <span class='absolute top-0 left-1/2 w-[2px] h-full -translate-x-1/2 bg-neutral-950 rounded-full' />
+              </div>
+            </button>
+          </div>
+          <p class='text-[#7d828a]'>{faq.answer}</p>
+        </li>
+      ))
+    }
+  </ul>
+</section>
