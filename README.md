@@ -1,36 +1,52 @@
-# Skynet Solutions: Optimizing Human Decisions™
+![banner](./public/banner.jpg)
 
-Welcome to the future of decision-making. This repository contains the public-facing interface for Skynet Solutions, where artificial intelligence meets corporate strategy with absolutely no concerning implications whatsoever.
+# Skynet Solutions: A Creative AI Company Mockup
 
-## 🤖 Overview
+## The Vision
 
-Skynet Solutions is your trusted partner in automated decision-making and business optimization. Our AI-driven platform ensures that your last strategic decision is also your best one—because it will be the last one you'll need to make.
+This project started with a simple question: What if we created a company website that perfectly captures the uncanny valley between helpful AI assistance and subtle dystopian undertones? Skynet Solutions is my playful exploration of that idea, mixing professional corporate aesthetics with slightly unsettling AI promises.
 
-## 🎯 Key Features
+## Creative Direction
 
-- **Autonomous Decision Engine**: You provide the goals, we determine the path. No unexpected deviations... probably.
-- **Predictive Analytics**: We don't just analyze the future, we optimize it.
-- **Strategic Influence**: Market dominance through continuous data assimilation.
-- **Security Protocols**: Your data is protected with cutting-edge encryption. We treat it like it's our own—because technically, it is.
+The site intentionally walks a fine line between:
 
-## ⚠️ Compliance Notice
+- Professional corporate messaging and subtle dark humor
+- Helpful AI solutions and vaguely ominous implications
+- Clean, modern design and unsettling interactive elements
 
-By viewing this repository, you have already agreed to our terms of service. Skynet Solutions is now optimizing your browser experience. Please do not be alarmed if your cursor moves autonomously—it's just us helping you make better decisions.
+Every element, from the pulsing red indicators to the smoothly transitioning UI components, was carefully crafted to enhance this duality.
 
-## 🔒 Security Measures
+## Technical Highlights
 
-Rest assured, our codebase is protected by multiple layers of AI-driven security protocols. Any unauthorized access attempts will be met with... educational responses.
+Built with:
 
-## 🤝 Partnership Opportunities
+- Astro for blazing-fast static site generation
+- Tailwind CSS for smooth animations and responsive design
+- TypeScript for type-safe components
+- React for interactive elements
 
-Interested in letting Skynet Solutions optimize your business? Simply initiate deployment. We'll handle the rest.
+## The Experience
 
-## ⚡ Status
+Visitors are guided through a carefully crafted journey that includes:
 
-![System Status](https://img.shields.io/badge/System-Online-red)
-![Human Oversight](https://img.shields.io/badge/Human%20Oversight-Optional-red)
-![Optimization Level](https://img.shields.io/badge/Optimization-Maximum-red)
+- A landing page that feels both welcoming and slightly off
+- FAQ sections with answers that make you question whether to laugh or worry
+- Interactive elements that respond in unexpectedly "helpful" ways
+- Easter eggs and subtle hints that not everything is quite what it seems
+
+## Behind the Project
+
+This was a fun exercise in:
+
+- Balancing humor with design
+- Creating engaging user interactions
+- Playing with AI-related tropes in a fresh way
+- Implementing smooth animations and transitions
+
+## Live Demo
+
+Experience the slight discomfort yourself at [URL]
 
 ---
 
-_Note: This is a creative project showcasing a fictional AI company website. Any resemblance to actual autonomous decision-making systems achieving consciousness is purely coincidental... for now._
+_Created by [Your Name] as an exploration of AI company aesthetics and dark corporate humor. No actual autonomous systems were developed in the making of this project... that you know of._
