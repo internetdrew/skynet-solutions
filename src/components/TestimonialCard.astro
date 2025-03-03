@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import type { Testimonial } from '../types';
+
+interface Props {
+  testimonial: Testimonial;
+}
+
+const { testimonial } = Astro.props;
+---
+
+<li
+  class='flex flex-col bg-[#D1D9E6] text-neutral-950 p-6 rounded-lg font-light'
+>
+  <p class='text-lg mb-4'>{testimonial.quote}</p>
+  <div class='mt-4 font-medium flex items-center gap-2'>
+    {
+      testimonial.imageSrc && (
+        <div class='w-10 h-10 rounded-full overflow-hidden flex items-center justify-center bg-neutral-950'>
+          <Image
+            src={testimonial.imageSrc}
+            alt={testimonial.name}
+            width={40}
+            height={40}
+            class='w-full h-full object-cover object-center'
+          />
+        </div>
+      )
+    }
+    <div>
+      <h3>{testimonial.name}</h3>
+      <p class='font-extralight'>{testimonial.position}</p>
+    </div>
+  </div>
+</li>
