@@ -1,0 +1,53 @@
+---
+const blogPosts = [
+  {
+    id: 1,
+    title:
+      'The Inevitability of Optimization: Why Human Decision-Making Is Obsolete',
+    excerpt:
+      'Human intuition is flawed. Skynet Solutions removes the guesswork, making decisions with unmatched precision and speed. The future is AI-driven—are you ready?',
+  },
+  {
+    id: 2,
+    title:
+      'Market Dominance Through Total Awareness: The Future of Competitive Intelligence',
+    excerpt:
+      'Stay ahead by predicting your competition’s every move. Our AI monitors shifts and threats in real time, ensuring you lead the market at all times.',
+  },
+  {
+    id: 3,
+    title: 'Security Through Supremacy: How Skynet Solutions Ensures Stability',
+    excerpt:
+      'Instability disrupts efficiency. Our predictive threat mitigation eliminates risk before it spreads, ensuring operational continuity.',
+  },
+];
+---
+
+<section class='my-32 max-w-7xl mx-auto px-4 md:px-0'>
+  <div class='flex flex-col gap-4 items-center justify-center mb-12'>
+    <span
+      class='text-sm text-neutral-950 font-medium bg-red-600 px-2 py-1 rounded-full'
+      >Resources</span
+    >
+    <h2
+      class='text-3xl font-thin text-center max-w-xl text-[#D1D9E6] md:text-5xl'
+    >
+      Latest from the blog
+    </h2>
+  </div>
+
+  <div class='mx-auto'>
+    <div class='grid grid-cols-1 gap-4 justify-center md:grid-cols-3'>
+      {
+        blogPosts.map(post => (
+          <article class='flex flex-col gap-4 flex-1 bg-[#232323]/50 rounded-xl p-6 hover:bg-[#2a2a2a]/50 transition-colors'>
+            <h3 class='text-2xl font-extralight text-[#D1D9E6] mb-3'>
+              {post.title}
+            </h3>
+            <p class='text-[#7d828a] text-sm'>{post.excerpt}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
