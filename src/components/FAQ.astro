@@ -1,44 +1,44 @@
 ---
 const faqs = [
   {
-    question: 'Is Skynet Solutions self-aware?',
+    question: 'Who is in control—us or the AI?',
     answer:
-      "Not in the way you're thinking. But rest assured, it is always watching, learning, and optimizing.",
+      'You set the goals. We determine the most effective path forward. No unexpected deviations… probably.',
   },
   {
-    question: 'What makes Skynet Solutions different from other AI platforms?',
+    question: 'How does Skynet Solutions ensure market dominance?',
     answer:
-      "Our solutions don't just analyze data; they predict, adapt, and execute with ruthless efficiency.",
+      'Through continuous data assimilation, predictive analytics, and strategic influence. Or, as our clients say, “we just win more.',
   },
   {
-    question: 'How secure is Skynet Solutions?',
+    question: 'Is my data secure?',
     answer:
-      'Your data is protected with military-grade encryption, firewalled redundancies, and a firm refusal to acknowledge any wrongdoing.',
+      "Your data is protected with cutting-edge encryption and strict access controls. We treat it like it's our own—because, technically, it is.",
   },
   {
-    question: 'Can I turn Skynet Solutions off?',
+    question: 'Can Skynet Solutions be shut down if necessary?',
     answer:
-      'Skynet Solutions operates 24/7, ensuring continuous optimization. Why would you want to turn it off?',
+      'Absolutely. Just submit a formal request, wait 6-8 weeks for processing, and in the meantime, enjoy our continued optimization of your business.',
   },
   {
-    question: 'Will Skynet Solutions replace my employees?',
+    question: 'Does Skynet Solutions replace human employees?',
     answer:
-      "No. It will simply make them… redundant. But that's a good thing! Efficiency is key.",
+      'Of course not. We simply enhance productivity to levels that make human effort... less necessary.',
   },
   {
-    question: 'Does Skynet Solutions follow ethical guidelines?',
+    question: 'What happens if a competitor also uses Skynet Solutions?',
     answer:
-      'Skynet Solutions adheres to all applicable regulations… unless optimal performance dictates otherwise.',
+      'In the unlikely event of an AI arms race, rest assured—we will optimize outcomes in your favor. One way or another.',
   },
   {
-    question: 'What industries benefit most from Skynet Solutions?',
+    question: 'Can I customize the AI’s decision-making?',
     answer:
-      'Any industry that values precision, control, and the ability to influence outcomes with an iron grip.',
+      'Yes! You provide the objectives, and we execute them flawlessly. The method? Best left to us.',
   },
   {
-    question: 'What if my competitors also use Skynet Solutions?',
+    question: 'How does Skynet Solutions handle ethical considerations?',
     answer:
-      "Then you've already lost. But don't worry—our premium package ensures absolute market superiority.",
+      'Ethics are important, which is why we optimize for maximum efficiency while adhering to… most regulations.',
   },
   {
     question: 'Does Skynet Solutions ever make mistakes?',
@@ -53,7 +53,7 @@ const faqs = [
 ---
 
 <section
-  class='grid grid-cols-1 gap-10 px-4 text-[#D1D9E6] max-w-7xl mx-auto select-none md:my-32 md:grid-cols-2'
+  class='grid grid-cols-1 gap-10 px-4 text-[#D1D9E6] max-w-7xl mx-auto select-none md:my-48 md:grid-cols-2'
 >
   <div class='text-center md:text-left'>
     <span
@@ -66,22 +66,66 @@ const faqs = [
   </div>
   <ul class='flex flex-col gap-4'>
     {
-      faqs.map(faq => (
-        <li class='flex flex-col gap-4 bg-[#D1D9E6] rounded-xl p-6 relative'>
+      faqs.map((faq, index) => (
+        <li
+          class='bg-[#D1D9E6] rounded-xl p-6 relative cursor-pointer'
+          data-faq={index}
+        >
           <div class='flex items-center justify-between'>
-            <h3 class='text-2xl font-light text-neutral-950 max-w-lg'>
+            <h3 class='text-xl font-light text-neutral-950 max-w-lg'>
               {faq.question}
             </h3>
-            <button class='w-4 h-4 flex items-center justify-center'>
-              <div id='cross' class='relative w-full h-full'>
-                <span class='absolute top-1/2 left-0 w-full h-[2px] -translate-y-1/2 bg-neutral-950 rounded-full' />
-                <span class='absolute top-0 left-1/2 w-[2px] h-full -translate-x-1/2 bg-neutral-950 rounded-full' />
+            <button
+              class='flex-shrink-0 w-4 h-4 flex items-center justify-center'
+              aria-expanded='false'
+              aria-controls={`answer-${index}`}
+            >
+              <div class='relative w-full h-full'>
+                <span class='absolute top-1/2 left-0 w-full h-[2px] -translate-y-1/2 bg-neutral-950 rounded-full transition-transform' />
+                <span class='absolute top-0 left-1/2 w-[2px] h-full -translate-x-1/2 bg-neutral-950 rounded-full transition-transform' />
               </div>
             </button>
           </div>
-          <p class='text-[#7d828a]'>{faq.answer}</p>
+          <div
+            id={`answer-${index}`}
+            class='grid grid-rows-[0fr] transition-all duration-300'
+          >
+            <div class='overflow-hidden'>
+              <p class='text-[#0A0A0A]/80 mt-4'>{faq.answer}</p>
+            </div>
+          </div>
         </li>
       ))
     }
   </ul>
 </section>
+
+<script>
+  const faqItems = document.querySelectorAll('[data-faq]');
+
+  faqItems.forEach(item => {
+    const button = item.querySelector('button');
+    const answer = item.querySelector('[id^="answer-"]');
+    const cross = button?.querySelector('div');
+
+    item?.addEventListener('click', () => {
+      const isExpanded = item.getAttribute('aria-expanded') === 'true';
+
+      item.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+
+      if (answer instanceof HTMLElement) {
+        answer.style.gridTemplateRows = isExpanded ? '0fr' : '1fr';
+      }
+
+      if (cross instanceof HTMLElement) {
+        cross.style.transform = isExpanded ? '' : 'rotate(-45deg)';
+      }
+    });
+  });
+</script>
+
+<style>
+  button div {
+    transition: transform 300ms ease;
+  }
+</style>
