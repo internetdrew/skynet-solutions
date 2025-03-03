@@ -55,7 +55,7 @@ const faqs = [
 <section
   class='grid grid-cols-1 gap-10 px-4 text-[#D1D9E6] max-w-7xl mx-auto select-none md:my-48 md:grid-cols-2'
 >
-  <div class='text-center md:text-left'>
+  <div class='text-center md:text-left md:sticky md:top-40 md:h-fit'>
     <span
       class='text-sm text-neutral-950 font-medium bg-red-600 px-2 py-1 rounded-full'
       >Have questions?</span
@@ -71,7 +71,7 @@ const faqs = [
           class='bg-[#D1D9E6] rounded-xl p-6 relative cursor-pointer'
           data-faq={index}
         >
-          <div class='flex items-center justify-between'>
+          <div class='flex items-center gap-6 justify-between'>
             <h3 class='text-xl font-light text-neutral-950 max-w-lg'>
               {faq.question}
             </h3>
