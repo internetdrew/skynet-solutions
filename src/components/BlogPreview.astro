@@ -37,14 +37,16 @@ const blogPosts = [
   </div>
 
   <div class='mx-auto'>
-    <div class='grid grid-cols-1 gap-4 justify-center md:grid-cols-3'>
+    <div
+      class='grid grid-cols-1 gap-4 justify-center md:grid-cols-2 lg:grid-cols-3'
+    >
       {
         blogPosts.map(post => (
           <article class='flex flex-col gap-4 flex-1 bg-[#232323]/50 rounded-xl p-6 hover:bg-[#2a2a2a]/50 transition-colors'>
             <h3 class='text-2xl font-extralight text-[#D1D9E6] mb-3'>
               {post.title}
             </h3>
-            <p class='text-[#7d828a] text-sm'>{post.excerpt}</p>
+            <p class='text-[#7d828a] text-sm mt-auto'>{post.excerpt}</p>
           </article>
         ))
       }
