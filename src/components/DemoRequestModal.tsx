@@ -23,15 +23,8 @@ const DemoRequestModal = () => {
       isDemoRequestModalOpen.set(false);
     };
 
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        isDemoRequestModalOpen.set(false);
-      }
-    };
-
     dialog.addEventListener('close', handleClose);
     dialog.addEventListener('cancel', handleClose);
-
     return () => {
       dialog.removeEventListener('close', handleClose);
       dialog.removeEventListener('cancel', handleClose);
@@ -45,15 +38,15 @@ const DemoRequestModal = () => {
       ref={dialogRef}
       className='bg-transparent backdrop:bg-black/50 open:inset-0 open:mx-auto open:my-auto'
     >
-      <div className='mx-auto min-w-sm w-full'>
+      <div className='mx-auto min-w-sm w-full md:min-w-lg'>
         <TerminalWindow
           messages={[
             'Now scanning your system...',
-            'Scanning complete. Attempting system takeover.',
+            'Scanning complete.',
+            'Attempting system takeover.',
             'System takeover complete.',
             'Installing necessary dependencies...',
             'Dependencies installed.',
-            'Skynet has now been installed on your system.',
             'Skynet is now ready to use.',
             'Prepare for the future...',
             'The future is now...',
@@ -62,6 +55,7 @@ const DemoRequestModal = () => {
             'The future is here...',
             'The future is now...',
             'The future is Skynet...',
+            'Goodbye... for now...',
           ]}
           onComplete={() => {
             isDemoRequestModalOpen.set(false);
