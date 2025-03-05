@@ -9,7 +9,8 @@
       </a>
     </div>
     <button
-      class='bg-neutral-50 py-3 px-4 rounded-full text-neutral-950 cursor-pointer text-sm'
+      id='demo-request-button-1'
+      class='bg-[#D1D9E6] py-3 px-4 rounded-full text-neutral-950 cursor-pointer text-sm'
     >
       Request a demo
     </button>
@@ -39,3 +40,13 @@
     }
   }
 </style>
+
+<script>
+  import { isDemoRequestModalOpen } from '../stores/demoRequestStore';
+
+  document
+    .getElementById('demo-request-button-1')
+    ?.addEventListener('click', () => {
+      isDemoRequestModalOpen.set(true);
+    });
+</script>
