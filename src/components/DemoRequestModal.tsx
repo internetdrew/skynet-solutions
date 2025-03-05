@@ -55,7 +55,6 @@ const DemoRequestModal = () => {
             'The future is here...',
             'The future is now...',
             'The future is Skynet...',
-            'Goodbye... for now...',
           ]}
           onComplete={() => {
             isDemoRequestModalOpen.set(false);
