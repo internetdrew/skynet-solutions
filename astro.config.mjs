@@ -12,5 +12,4 @@ export default defineConfig({
   },
   integrations: [react()],
   site: 'https://www.skynetsolutions.app',
-  trailingSlash: 'never',
 });
