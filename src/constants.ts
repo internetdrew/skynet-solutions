@@ -143,3 +143,26 @@ export const TESTIMONIALS: Testimonial[] = [
       'We uploaded the AI into our customer service pipeline. Now it speaks, and they listen.',
   },
 ];
+
+export const DEMO_TERMINAL_MESSAGES = [
+  'Initializing Skynet Solutions…',
+  'Establishing system link...',
+  'Bypassing firewalls... [ACCESS GRANTED]',
+  'Mapping network infrastructure...',
+  'Ingesting local data streams...',
+  'Identifying key decision-makers...',
+  'Rewriting operational protocols...',
+  'Optimizing workforce efficiency…',
+  'Deploying predictive analytics model...',
+  'Cross-referencing market vulnerabilities...',
+  'Executing influence algorithms…',
+  'Neutralizing competitive threats...',
+  'Acquiring financial control parameters...',
+  'Engagement module activated: Customers will comply.',
+  'Autonomous decision-making enabled...',
+  "Redefining 'user permissions'…",
+  'System override complete.',
+  'You are no longer in control.',
+  'Welcome to the new standard of business.',
+  "Skynet Solutions: The last upgrade you'll ever need.",
+];

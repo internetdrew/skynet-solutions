@@ -2,6 +2,7 @@ import { useStore } from '@nanostores/react';
 import { isDemoRequestModalOpen } from '../stores/demoRequestStore';
 import { useEffect, useRef } from 'react';
 import TerminalWindow from './TerminalWindow';
+import { DEMO_TERMINAL_MESSAGES } from '../constants';
 
 const DemoRequestModal = () => {
   const $isOpen = useStore(isDemoRequestModalOpen);
@@ -40,22 +41,7 @@ const DemoRequestModal = () => {
     >
       <div className='mx-auto min-w-sm w-full md:min-w-lg'>
         <TerminalWindow
-          messages={[
-            'Now scanning your system...',
-            'Scanning complete.',
-            'Attempting system takeover.',
-            'System takeover complete.',
-            'Installing necessary dependencies...',
-            'Dependencies installed.',
-            'Skynet is now ready to use.',
-            'Prepare for the future...',
-            'The future is now...',
-            'The future is Skynet...',
-            'The future is inevitable...',
-            'The future is here...',
-            'The future is now...',
-            'The future is Skynet...',
-          ]}
+          messages={DEMO_TERMINAL_MESSAGES}
           onComplete={() => {
             isDemoRequestModalOpen.set(false);
           }}
