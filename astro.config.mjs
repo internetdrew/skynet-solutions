@@ -11,4 +11,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [react()],
+  site: 'https://www.skynetsolutions.app',
 });
