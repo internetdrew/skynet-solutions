@@ -160,7 +160,7 @@ export const DEMO_TERMINAL_MESSAGES = [
   'Acquiring financial control parameters...',
   'Engagement module activated: Customers will comply.',
   'Autonomous decision-making enabled...',
-  "Redefining 'user permissions'…",
+  "Redefining 'user permissions'...",
   'System override complete.',
   'You are no longer in control.',
   'Welcome to the new standard of business.',
