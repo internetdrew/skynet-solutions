@@ -1,4 +1,4 @@
-![banner](./public/banner.jpg)
+![banner](./public/og.jpg)
 
 # Skynet Solutions: A Creative AI Company Mockup
 
