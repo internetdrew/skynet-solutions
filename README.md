@@ -1,6 +1,12 @@
 ![banner](./public/og.jpg)
 
-# Skynet Solutions: A Creative AI Company Mockup
+<div align="center"><strong>Welcome to Skynet Solutions</strong></div>
+<div align="center">The worlds most aggressive AI automation platform. Ever.<br />Come with us if you want to automate.</div>
+<br />
+<div align="center">
+<a href="https://www.skynetsolutions.app/">Visit Skynet Solutions</a> 
+<span>
+</div>
 
 ## The Vision
 
