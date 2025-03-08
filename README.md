@@ -45,8 +45,8 @@ This was a fun exercise in:
 
 ## Live Demo
 
-Experience the slight discomfort yourself at [URL]
+Experience the slight discomfort yourself at [skynetsolutions.app](https://www.skynetsolutions.app/)
 
 ---
 
-_Created by [Your Name] as an exploration of AI company aesthetics and dark corporate humor. No actual autonomous systems were developed in the making of this project... that you know of._
+_Created by Andrew Rowley as an exploration of AI company aesthetics and dark corporate humor. No actual autonomous systems were developed in the making of this project... that you know of._
