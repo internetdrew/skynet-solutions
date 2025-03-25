@@ -7,14 +7,17 @@ const socialLinks = [
   {
     href: 'https://www.internetdrew.com/',
     icon: GitHubIcon,
+    ariaLabel: 'GitHub',
   },
   {
     href: 'https://www.linkedin.com/in/internetdrew/',
     icon: LinkedInIcon,
+    ariaLabel: 'LinkedIn',
   },
   {
     href: 'https://x.com/_internetdrew',
     icon: XIcon,
+    ariaLabel: 'X',
   },
 ];
 ---
@@ -40,7 +43,11 @@ const socialLinks = [
       {
         socialLinks.map(link => (
           <li>
-            <a href={link.href} class='hover:text-red-600'>
+            <a
+              href={link.href}
+              aria-label={link.ariaLabel}
+              class='hover:text-red-600'
+            >
               <link.icon />
             </a>
           </li>
