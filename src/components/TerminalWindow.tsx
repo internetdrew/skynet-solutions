@@ -1,20 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { useStore } from '@nanostores/react';
-import { isFeaturesVisible } from '../stores/featuresStore';
-
 interface TerminalWindowProps {
   messages: string[];
   onComplete?: () => void;
+  triggerWhenVisible?: boolean;
 }
 
-const TerminalWindow = ({ messages, onComplete }: TerminalWindowProps) => {
+const TerminalWindow = ({
+  messages,
+  onComplete,
+  triggerWhenVisible: triggerElementVisible = true,
+}: TerminalWindowProps) => {
   const [visibleMessages, setVisibleMessages] = useState<string[]>([]);
   const containerRef = useRef<HTMLUListElement>(null);
-  const $isFeaturesVisible = useStore(isFeaturesVisible);
 
   useEffect(() => {
-    if (!$isFeaturesVisible) {
+    if (!triggerElementVisible) {
       setVisibleMessages([]);
       return;
     }
@@ -41,11 +42,11 @@ const TerminalWindow = ({ messages, onComplete }: TerminalWindowProps) => {
     });
 
     return () => timeouts.forEach(timeout => clearTimeout(timeout));
-  }, [messages, onComplete, $isFeaturesVisible]);
+  }, [messages, onComplete, triggerElementVisible]);
 
   useEffect(() => {
     if (
-      ($isFeaturesVisible && containerRef.current) ||
+      (triggerElementVisible && containerRef.current) ||
       visibleMessages.length > 6
     ) {
       const container = containerRef.current;
@@ -54,7 +55,7 @@ const TerminalWindow = ({ messages, onComplete }: TerminalWindowProps) => {
         behavior: 'smooth',
       });
     }
-  }, [visibleMessages, $isFeaturesVisible]);
+  }, [visibleMessages, triggerElementVisible]);
 
   return (
     <div className='w-full mx-auto rounded-lg bg-neutral-950 text-white font-mono text-sm'>
