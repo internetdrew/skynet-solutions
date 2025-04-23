@@ -14,6 +14,11 @@ const TerminalWindow = ({ messages, onComplete }: TerminalWindowProps) => {
   const $isFeaturesVisible = useStore(isFeaturesVisible);
 
   useEffect(() => {
+    if (!$isFeaturesVisible) {
+      setVisibleMessages([]);
+      return;
+    }
+
     setVisibleMessages([]);
 
     let timeouts: number[] = [];
@@ -36,7 +41,7 @@ const TerminalWindow = ({ messages, onComplete }: TerminalWindowProps) => {
     });
 
     return () => timeouts.forEach(timeout => clearTimeout(timeout));
-  }, [messages, onComplete]);
+  }, [messages, onComplete, $isFeaturesVisible]);
 
   useEffect(() => {
     if (
