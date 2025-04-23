@@ -16,6 +16,12 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
   const $isHeaderVisible = useStore(isHeaderVisible);
 
   useEffect(() => {
+    if (!$isHeaderVisible) {
+      setVisibleMessages([]);
+      setIsLoading(false);
+      return;
+    }
+
     setVisibleMessages([]);
     setIsLoading(true);
 
@@ -42,7 +48,7 @@ const Chatbox = ({ chatStream }: ChatboxProps) => {
     });
 
     return () => timeouts.forEach(timeout => clearTimeout(timeout));
-  }, [chatStream]);
+  }, [chatStream, $isHeaderVisible]);
 
   useEffect(() => {
     if (
