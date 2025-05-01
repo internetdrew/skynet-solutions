@@ -3,7 +3,6 @@ import CoreFeaturesDemo from './CoreFeaturesDemo';
 ---
 
 <section
-  id='features'
   class='flex flex-col gap-4 max-w-7xl mx-4 py-16 md:mx-auto text-[#D1D9E6]'
 >
   <div class='flex flex-col gap-4 items-center justify-center'>
@@ -21,7 +20,9 @@ import CoreFeaturesDemo from './CoreFeaturesDemo';
       ensures your position as the last one standing.
     </p>
   </div>
-  <CoreFeaturesDemo client:idle />
+  <div id='features'>
+    <CoreFeaturesDemo client:idle />
+  </div>
 </section>
 
 <script>
